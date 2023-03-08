@@ -39,7 +39,6 @@ function convertCurrency() {
 
     .then((data) => {
       console.log(data);
-      fetchNews();
     });
 }
 
@@ -52,7 +51,7 @@ function fetchNews() {
 
   var requestUrl =
     "https://api.thenewsapi.com/v1/news/top?api_token=" +
-    kanesNewsApiKey +
+    halimasNewsApiKey +
     "&search=" +
     conversionCurrency +
     "&language=en&categories=travel&limit=3";
@@ -68,4 +67,9 @@ function fetchNews() {
     .then((data) => {
       console.log(data);
     });
+}
+
+function displayMedia() {
+  convertCurrency();
+  fetchNews();
 }
