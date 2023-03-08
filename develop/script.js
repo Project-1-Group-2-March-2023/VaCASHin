@@ -15,10 +15,10 @@ function convertCurrency() {
     var conversionCurrency = "GBP";
     
     // API KEY CHANGES BASED ON DEVELOPER
-    var kanesApiKey = "9470f9dffac1cee9291efaaa";
-    var rachelsApiKey = "97450b01cbb760880bc42f8b";
-    // var halimasApiKey =;
-    // var gilbertsApiKey =;
+    var kanesExchangeApiKey = "9470f9dffac1cee9291efaaa";
+    var rachelsExchangeApiKey = "97450b01cbb760880bc42f8b";
+    // var halimasExchangeApiKey =;
+    // var gilbertsExchangeApiKey =;
 
     // Placeholder
     var requestUrl = "https://v6.exchangerate-api.com/v6/" + kanesApiKey + "/pair/" + baseCurrency + "/" + conversionCurrency + "/" + currencyAmount;
