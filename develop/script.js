@@ -18,7 +18,7 @@ function convertCurrency() {
   var kanesExchangeApiKey = "9470f9dffac1cee9291efaaa";
   var rachelsExchangeApiKey = "97450b01cbb760880bc42f8b";
   var halimasExchangeApiKey = "737ab999317301663c433266";
-  // var gilbertsExchangeApiKey =;
+  var gilbertsExchangeApiKey = "5280590e56c65a2c9f884ca1";
 
   // Placeholder
   var requestUrl =
