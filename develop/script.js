@@ -48,7 +48,7 @@ function fetchNews() {
   var kanesNewsApiKey = "5zntd2rkE2lIMet0v3XDDKdf05SK5cHYXh4fs6x5";
   var rachelsNewsApiKey = "c0HyGSCQSadpwj8ZGImoEQFL9Hr9OwRUuvR1UhIM";
   var halimasNewsApiKey = "VLljP03pjCiv4Ud2BUYCUqexO7YUWIXRsbULzBSX";
-  // var gilbertsNewsApiKey = "";
+  var gilbertsNewsApiKey = "7gcqzRT4v6mBCEHyYyZLXaHENi6aDQPmLJDsLckq";
 
   var requestUrl =
     "https://api.thenewsapi.com/v1/news/top?api_token=" +
