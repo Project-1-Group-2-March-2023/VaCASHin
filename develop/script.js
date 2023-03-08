@@ -17,13 +17,13 @@ function convertCurrency() {
   // API KEY CHANGES BASED ON DEVELOPER
   var kanesExchangeApiKey = "9470f9dffac1cee9291efaaa";
   var rachelsExchangeApiKey = "97450b01cbb760880bc42f8b";
-  var halimasExchangeApiKey = "737ab999317301663c433266";
+  var halimasExchangeApiKey = "224caa9c11411787d8b17b3e";
   var gilbertsExchangeApiKey = "5280590e56c65a2c9f884ca1";
 
   // Placeholder
   var requestUrl =
     "https://v6.exchangerate-api.com/v6/" +
-    kanesApiKey +
+    kanesExchangeApiKey +
     "/pair/" +
     baseCurrency +
     "/" +
