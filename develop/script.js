@@ -2,18 +2,18 @@
 // and press the 'Conversion' button, the Currency Amount is converted from the Base Curenncy
 // to the Conversion Currency
 
+// Input Variables
+
+// Placeholder
+var baseCurrency = "USD";
+
+// Placeholder
+var currencyAmount = "10.00";
+
+// Placeholder
+var conversionCurrency = "GBP";
+
 function convertCurrency() {
-  // Variables
-
-  // Placeholder
-  var baseCurrency = "USD";
-
-  // Placeholder
-  var currencyAmount = "10.00";
-
-  // Placeholder
-  var conversionCurrency = "GBP";
-
   // API KEY CHANGES BASED ON DEVELOPER
   var kanesExchangeApiKey = "9470f9dffac1cee9291efaaa";
   var rachelsExchangeApiKey = "97450b01cbb760880bc42f8b";
@@ -30,6 +30,34 @@ function convertCurrency() {
     conversionCurrency +
     "/" +
     currencyAmount;
+
+  // Returns data based on the requestUrl
+  fetch(requestUrl)
+    .then((response) => {
+      return response.json();
+    })
+
+    .then((data) => {
+      console.log(data);
+      fetchNews()
+    });
+}
+
+function fetchNews() {
+  // API KEY CHANGES BASED ON DEVELOPER
+  var kanesNewsApiKey = "5zntd2rkE2lIMet0v3XDDKdf05SK5cHYXh4fs6x5";
+  // var rachelsNewsApiKey = "";
+  // var halimasNewsApiKey = "";
+  // var gilbertsNewsApiKey = "";
+
+  var requestUrl = 
+  "https://api.thenewsapi.com/v1/news/top?api_token=" + 
+  kanesNewsApiKey + 
+  "&search=" +
+  conversionCurrency +
+  "&language=en&categories=travel&limit=3"
+
+  console.log(requestUrl)
 
   // Returns data based on the requestUrl
   fetch(requestUrl)
