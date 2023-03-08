@@ -39,7 +39,7 @@ function convertCurrency() {
 
     .then((data) => {
       console.log(data);
-      fetchNews()
+      fetchNews();
     });
 }
 
@@ -47,17 +47,17 @@ function fetchNews() {
   // API KEY CHANGES BASED ON DEVELOPER
   var kanesNewsApiKey = "5zntd2rkE2lIMet0v3XDDKdf05SK5cHYXh4fs6x5";
   var rachelsNewsApiKey = "c0HyGSCQSadpwj8ZGImoEQFL9Hr9OwRUuvR1UhIM";
-  // var halimasNewsApiKey = "";
+  var halimasNewsApiKey = "VLljP03pjCiv4Ud2BUYCUqexO7YUWIXRsbULzBSX";
   // var gilbertsNewsApiKey = "";
 
-  var requestUrl = 
-  "https://api.thenewsapi.com/v1/news/top?api_token=" + 
-  kanesNewsApiKey + 
-  "&search=" +
-  conversionCurrency +
-  "&language=en&categories=travel&limit=3"
+  var requestUrl =
+    "https://api.thenewsapi.com/v1/news/top?api_token=" +
+    kanesNewsApiKey +
+    "&search=" +
+    conversionCurrency +
+    "&language=en&categories=travel&limit=3";
 
-  console.log(requestUrl)
+  console.log(requestUrl);
 
   // Returns data based on the requestUrl
   fetch(requestUrl)
