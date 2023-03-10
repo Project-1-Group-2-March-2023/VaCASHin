@@ -10,7 +10,7 @@
     function startingCurrency() {
       var startingList = document.getElementById("startingList");
       // document.getElementById("currency1").value =
-        // startingList.options[startingList.selectedIndex].text;
+      // startingList.options[startingList.selectedIndex].text;
     }
 
     function endingCurrency() {
@@ -45,7 +45,8 @@
             <option>TRY</option>
           </select>
           <p>
-            Currency Amount to Convert <input type="text" id="currency1" size="20" />
+            Currency Amount to Convert
+            <input type="text" id="currency1" size="20" />
           </p>
         </form>
         <form class="toCurrencyForm">
@@ -64,6 +65,8 @@
         </form>
         <button id="initiateBtn">Initiate Conversion</button>
         <button id="clearBtn">Clear Form</button>
+        <div id="exchangeContainer"></div>
+        <div id="newsContainer"></div>
       </section>
     </main>
   </body>
