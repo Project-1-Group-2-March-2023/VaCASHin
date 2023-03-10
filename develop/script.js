@@ -19,6 +19,9 @@ var conversionCurrency = document.getElementById("endingList");
 var conversionButton = document.getElementById("initiateBtn")
 var clearButton = document.getElementById("clearBtn")
 
+//Container Variables 
+var exchangeCtn = document.getElementById("exchangeContainer");
+
 function convertCurrency() {
   // API KEY CHANGES BASED ON DEVELOPER
   var kanesExchangeApiKey = "9470f9dffac1cee9291efaaa";
@@ -45,12 +48,33 @@ function convertCurrency() {
       return response.json();
     })
 
-    .then((data) => {
-      console.log(data);
-      // add data to the array
-      storageArray.push(data)
-      localStorage.setItem("displayMedia", JSON.stringify(storageArray));
-    });
+//     .then((data) => {
+//       console.log(data);
+//       // add data to the array
+//       storageArray.push(data)
+//       localStorage.setItem("displayMedia", JSON.stringify(storageArray));
+//       exchangeCtn.append();
+//     });
+      .then(function (appendExchange) {
+        console.log(appendExchange);
+        var currencyCnvtFrom = document.createElement("p")
+        var currencyCnvtTo = document.createElement("p")
+        var originalCurrencyAmt = document.createElement("p")
+        var convertedCurrencyAmt = document.createElement("p")
+        var exchangeRt = document.createElement("p")
+        
+        currencyCnvtFrom.textContent = "Currency Converted From: " + baseCurrency.value
+        currencyCnvtTo.textContent = "Currency Converted To: " + conversionCurrency.value
+        originalCurrencyAmt.textContent = "Original Currency Amount: " + currencyAmount.value
+        convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result
+        exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate
+
+        exchangeCtn.appendChild(currencyCnvtFrom);
+        exchangeCtn.appendChild(currencyCnvtTo);
+        exchangeCtn.appendChild(originalCurrencyAmt);
+        exchangeCtn.appendChild(convertedCurrencyAmt);
+        exchangeCtn.appendChild(exchangeRt);
+});
 }
 
 function fetchNews() {
