@@ -3,6 +3,8 @@
 // to the Conversion Currency
 
 // Input Variables
+//create array
+var storageArray = []
 
 // Placeholder
 var baseCurrency = "USD";
@@ -39,6 +41,9 @@ function convertCurrency() {
 
     .then((data) => {
       console.log(data);
+      // add data to the array
+      storageArray.push(data)
+      localStorage.setItem("displayMedia", JSON.stringify(storageArray));
     });
 }
 
@@ -73,3 +78,11 @@ function displayMedia() {
   convertCurrency();
   fetchNews();
 }
+//converting back to javascript object
+
+const test = localStorage.getItem('displayMedia');
+console.log("return from local storage", JSON.parse(test));
+convertCurrency();
+convertCurrency();
+
+
