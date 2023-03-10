@@ -9,14 +9,14 @@
   <script>
     function startingCurrency() {
       var startingList = document.getElementById("startingList");
-      document.getElementById("currency1").value =
-        startingList.options[startingList.selectedIndex].text;
+      // document.getElementById("currency1").value =
+        // startingList.options[startingList.selectedIndex].text;
     }
 
     function endingCurrency() {
       var endingList = document.getElementById("endingList");
-      document.getElementById("currency2").value =
-        endingList.options[endingList.selectedIndex].text;
+      // document.getElementById("currency2").value =
+      //   endingList.options[endingList.selectedIndex].text;
     }
   </script>
   <body>
@@ -36,31 +36,31 @@
     <main class="content">
       <section class="section1">
         <form class="fromCurrencyForm">
-          <b>Currency Converter</b>
+          <b>Currency to Convert From</b>
           <select id="startingList" onchange="startingCurrency()">
-            <option>From</option>
-            <option>USA</option>
-            <option>Australia</option>
-            <option>United Kingdom</option>
-            <option>Turkey</option>
+            <!-- <option>From</option> -->
+            <option>USD</option>
+            <option>AUD</option>
+            <option>GBP</option>
+            <option>TRY</option>
           </select>
           <p>
-            Starting Currency <input type="text" id="currency1" size="20" />
+            Currency Amount to Convert <input type="text" id="currency1" size="20" />
           </p>
         </form>
         <form class="toCurrencyForm">
-          <b> Blank</b>
+          <b> Curency to Convert To</b>
           <select id="endingList" onchange="endingCurrency()">
-            <option>To</option>
-            <option>USA</option>
-            <option>Australia</option>
-            <option>United Kingdom</option>
-            <option>Turkey</option>
+            <!-- <option>To</option> -->
+            <option>USD</option>
+            <option>AUD</option>
+            <option>GBP</option>
+            <option>TRY</option>
           </select>
-          <p>
+          <!-- <p>
             Ending Currency
             <input type="text" id="currency2" size="20" />
-          </p>
+          </p> -->
         </form>
         <button id="initiateBtn">Initiate Conversion</button>
         <button id="clearBtn">Clear Form</button>

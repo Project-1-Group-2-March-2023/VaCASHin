@@ -2,18 +2,22 @@
 // and press the 'Conversion' button, the Currency Amount is converted from the Base Curenncy
 // to the Conversion Currency
 
-// Input Variables
 //create array
 var storageArray = []
 
-// Placeholder
-var baseCurrency = "USD";
+// Input Variables
+var baseCurrency = document.getElementById("startingList");
+// console.log(baseCurrency)
 
-// Placeholder
-var currencyAmount = "10.00";
+var currencyAmount = document.getElementById("currency1");
+// console.log(currencyAmount)
 
-// Placeholder
-var conversionCurrency = "GBP";
+var conversionCurrency = document.getElementById("endingList");
+// console.log(conversionCurrency)
+
+// Button Variables
+var conversionButton = document.getElementById("initiateBtn")
+var clearButton = document.getElementById("clearBtn")
 
 function convertCurrency() {
   // API KEY CHANGES BASED ON DEVELOPER
@@ -22,16 +26,18 @@ function convertCurrency() {
   var halimasExchangeApiKey = "224caa9c11411787d8b17b3e";
   var gilbertsExchangeApiKey = "5280590e56c65a2c9f884ca1";
 
-  // Placeholder
+  // Creating and fetching a url comprised with form elements
   var requestUrl =
     "https://v6.exchangerate-api.com/v6/" +
-    kanesExchangeApiKey +
+    rachelsExchangeApiKey +
     "/pair/" +
-    baseCurrency +
+    baseCurrency.value +
     "/" +
-    conversionCurrency +
+    conversionCurrency.value +
     "/" +
-    currencyAmount;
+    currencyAmount.value;
+
+  console.log(requestUrl)
 
   // Returns data based on the requestUrl
   fetch(requestUrl)
@@ -54,11 +60,12 @@ function fetchNews() {
   var halimasNewsApiKey = "VLljP03pjCiv4Ud2BUYCUqexO7YUWIXRsbULzBSX";
   var gilbertsNewsApiKey = "7gcqzRT4v6mBCEHyYyZLXaHENi6aDQPmLJDsLckq";
 
+   // Creating and fetching a url comprised with form elements
   var requestUrl =
     "https://api.thenewsapi.com/v1/news/top?api_token=" +
     halimasNewsApiKey +
     "&search=" +
-    conversionCurrency +
+    conversionCurrency.value +
     "&language=en&categories=travel&limit=3";
 
   console.log(requestUrl);
@@ -82,7 +89,9 @@ function displayMedia() {
 
 const test = localStorage.getItem('displayMedia');
 console.log("return from local storage", JSON.parse(test));
-convertCurrency();
-convertCurrency();
+// convertCurrency();
+// convertCurrency();
 
 
+// Event that Initiates Conversion
+conversionButton.addEventListener("click", displayMedia)
