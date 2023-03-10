@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script src="./develop/script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaCASHin</title>
+  </head>
+  <script>
+    function startingCurrency() {
+      var startingList = document.getElementById("startingList");
+      document.getElementById("currency1").value =
+        startingList.options[startingList.selectedIndex].text;
+    }
+
+    function endingCurrency() {
+      var endingList = document.getElementById("endingList");
+      document.getElementById("currency2").value =
+        endingList.options[endingList.selectedIndex].text;
+    }
+  </script>
+  <body>
+    <header class="top-header">
+      <nav>
+        <ul>
+          <li>
+            <a href=""> Currency Converter </a>
+          </li>
+          <li>
+            <a href=""> Currency News </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <figure class="banner"></figure>
+    <main class="content">
+      <section class="section1">
+        <form class="fromCurrencyForm">
+          <b>Currency Converter</b>
+          <select id="startingList" onchange="startingCurrency()">
+            <option>From</option>
+            <option>USA</option>
+            <option>Australia</option>
+            <option>United Kingdom</option>
+            <option>Turkey</option>
+          </select>
+          <p>
+            Starting Currency <input type="text" id="currency1" size="20" />
+          </p>
+        </form>
+        <form class="toCurrencyForm">
+          <b> Blank</b>
+          <select id="endingList" onchange="endingCurrency()">
+            <option>To</option>
+            <option>USA</option>
+            <option>Australia</option>
+            <option>United Kingdom</option>
+            <option>Turkey</option>
+          </select>
+          <p>
+            Ending Currency
+            <input type="text" id="currency2" size="20" />
+          </p>
+        </form>
+        <button id="initiateBtn">Initiate Conversion</button>
+        <button id="clearBtn">Clear Form</button>
+      </section>
+    </main>
+  </body>
+  <script src="./develop/script.js"></script>
 </html>
