@@ -21,6 +21,7 @@ var clearButton = document.getElementById("clearBtn")
 
 //Container Variables 
 var exchangeCtn = document.getElementById("exchangeContainer");
+var newsCtn= document.getElementById("newsContainer");
 
 function convertCurrency() {
   // API KEY CHANGES BASED ON DEVELOPER
@@ -100,10 +101,25 @@ function fetchNews() {
       return response.json();
     })
 
-    .then((data) => {
-      console.log(data);
+    .then(function (appendNews) {
+      console.log(appendNews);
+      for (i = 0; i < appendNews.data.length ; i++) {
+        var title= document.createElement("p") 
+        var image= document.createElement("img")
+        var website= document.createElement("a")
+       
+        title.textContent= appendNews.data[i].title
+        image.src= appendNews.data[i].image_url
+        website.href= appendNews.data[i].url
+
+        newsCtn.appendChild(title)
+        newsCtn.appendChild(image)
+        newsCtn.appendChild(website)
+   }
     });
 }
+
+
 
 function displayMedia() {
   convertCurrency();
