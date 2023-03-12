@@ -21,7 +21,7 @@ var clearButton = document.getElementById("clearBtn")
 
 //Container Variables 
 var exchangeCtn = document.getElementById("exchangeContainer");
-var newsCtn= document.getElementById("newsContainer");
+var newsCtn = document.getElementById("newsContainer");
 
 function convertCurrency() {
   // API KEY CHANGES BASED ON DEVELOPER
@@ -49,33 +49,33 @@ function convertCurrency() {
       return response.json();
     })
 
-//     .then((data) => {
-//       console.log(data);
-//       // add data to the array
-//       storageArray.push(data)
-//       localStorage.setItem("displayMedia", JSON.stringify(storageArray));
-//       exchangeCtn.append();
-//     });
-      .then(function (appendExchange) {
-        console.log(appendExchange);
-        var currencyCnvtFrom = document.createElement("p")
-        var currencyCnvtTo = document.createElement("p")
-        var originalCurrencyAmt = document.createElement("p")
-        var convertedCurrencyAmt = document.createElement("p")
-        var exchangeRt = document.createElement("p")
-        
-        currencyCnvtFrom.textContent = "Currency Converted From: " + baseCurrency.value
-        currencyCnvtTo.textContent = "Currency Converted To: " + conversionCurrency.value
-        originalCurrencyAmt.textContent = "Original Currency Amount: " + currencyAmount.value
-        convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result
-        exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate
+    //     .then((data) => {
+    //       console.log(data);
+    //       // add data to the array
+    //       storageArray.push(data)
+    //       localStorage.setItem("displayMedia", JSON.stringify(storageArray));
+    //       exchangeCtn.append();
+    //     });
+    .then(function (appendExchange) {
+      console.log(appendExchange);
+      var currencyCnvtFrom = document.createElement("p")
+      var currencyCnvtTo = document.createElement("p")
+      var originalCurrencyAmt = document.createElement("p")
+      var convertedCurrencyAmt = document.createElement("p")
+      var exchangeRt = document.createElement("p")
 
-        exchangeCtn.appendChild(currencyCnvtFrom);
-        exchangeCtn.appendChild(currencyCnvtTo);
-        exchangeCtn.appendChild(originalCurrencyAmt);
-        exchangeCtn.appendChild(convertedCurrencyAmt);
-        exchangeCtn.appendChild(exchangeRt);
-});
+      currencyCnvtFrom.textContent = "Currency Converted From: " + baseCurrency.value
+      currencyCnvtTo.textContent = "Currency Converted To: " + conversionCurrency.value
+      originalCurrencyAmt.textContent = "Original Currency Amount: " + currencyAmount.value
+      convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result
+      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate
+
+      exchangeCtn.appendChild(currencyCnvtFrom);
+      exchangeCtn.appendChild(currencyCnvtTo);
+      exchangeCtn.appendChild(originalCurrencyAmt);
+      exchangeCtn.appendChild(convertedCurrencyAmt);
+      exchangeCtn.appendChild(exchangeRt);
+    });
 }
 
 function fetchNews() {
@@ -85,7 +85,7 @@ function fetchNews() {
   var halimasNewsApiKey = "VLljP03pjCiv4Ud2BUYCUqexO7YUWIXRsbULzBSX";
   var gilbertsNewsApiKey = "7gcqzRT4v6mBCEHyYyZLXaHENi6aDQPmLJDsLckq";
 
-   // Creating and fetching a url comprised with form elements
+  // Creating and fetching a url comprised with form elements
   var requestUrl =
     "https://api.thenewsapi.com/v1/news/top?api_token=" +
     halimasNewsApiKey +
@@ -103,19 +103,19 @@ function fetchNews() {
 
     .then(function (appendNews) {
       console.log(appendNews);
-      for (i = 0; i < appendNews.data.length ; i++) {
-        var title= document.createElement("p") 
-        var image= document.createElement("img")
-        var website= document.createElement("a")
-       
-        title.textContent= appendNews.data[i].title
-        image.src= appendNews.data[i].image_url
-        website.href= appendNews.data[i].url
+      for (i = 0; i < appendNews.data.length; i++) {
+        var title = document.createElement("p")
+        var image = document.createElement("img")
+        var website = document.createElement("a")
 
-        newsCtn.appendChild(title)
-        newsCtn.appendChild(image)
-        newsCtn.appendChild(website)
-   }
+        title.textContent = appendNews.data[i].title
+        image.src = appendNews.data[i].image_url
+        website.href = appendNews.data[i].url
+
+        newsCtn.appendChild(title);
+        newsCtn.appendChild(image);
+        newsCtn.appendChild(website);
+      }
     });
 }
 
