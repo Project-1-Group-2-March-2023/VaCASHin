@@ -49,13 +49,6 @@ function convertCurrency() {
       return response.json();
     })
 
-    //     .then((data) => {
-    //       console.log(data);
-    //       // add data to the array
-    //       storageArray.push(data)
-    //       localStorage.setItem("displayMedia", JSON.stringify(storageArray));
-    //       exchangeCtn.append();
-    //     });
     .then(function (appendExchange) {
       console.log(appendExchange);
       var currencyCnvtFrom = document.createElement("p")
@@ -104,13 +97,13 @@ function fetchNews() {
     .then(function (appendNews) {
       console.log(appendNews);
       for (i = 0; i < appendNews.data.length; i++) {
-        var title = document.createElement("p")
-        var image = document.createElement("img")
-        var website = document.createElement("a")
+        var title = document.createElement("p");
+        var image = document.createElement("img");
+        var website = document.createElement("a");
 
-        title.textContent = appendNews.data[i].title
-        image.src = appendNews.data[i].image_url
-        website.href = appendNews.data[i].url
+        title.textContent = appendNews.data[i].title;
+        image.src = appendNews.data[i].image_url;
+        website.href = appendNews.data[i].url;
 
         newsCtn.appendChild(title);
         newsCtn.appendChild(image);
@@ -119,19 +112,21 @@ function fetchNews() {
     });
 }
 
-
-
 function displayMedia() {
   convertCurrency();
   fetchNews();
 }
-//converting back to javascript object
 
-const test = localStorage.getItem('displayMedia');
+//Stringify and set key in localStorage to var storageArray array
+localStorage.setItem('conversionCurrency', JSON.stringify(conversionCurrency));
+
+const test = localStorage.getItem('conversionCurrency');
+
 console.log("return from local storage", JSON.parse(test));
-// convertCurrency();
-// convertCurrency();
 
+//to remove all localstorage items
+localStorage.clear();
 
 // Event that Initiates Conversion
 conversionButton.addEventListener("click", displayMedia)
+
