@@ -51,17 +51,17 @@ function convertCurrency() {
 
     .then(function (appendExchange) {
       console.log(appendExchange);
-      var currencyCnvtFrom = document.createElement("p")
-      var currencyCnvtTo = document.createElement("p")
-      var originalCurrencyAmt = document.createElement("p")
-      var convertedCurrencyAmt = document.createElement("p")
-      var exchangeRt = document.createElement("p")
+      var currencyCnvtFrom = document.createElement("p");
+      var currencyCnvtTo = document.createElement("p");
+      var originalCurrencyAmt = document.createElement("p");
+      var convertedCurrencyAmt = document.createElement("p");
+      var exchangeRt = document.createElement("p");
 
-      currencyCnvtFrom.textContent = "Currency Converted From: " + baseCurrency.value
-      currencyCnvtTo.textContent = "Currency Converted To: " + conversionCurrency.value
-      originalCurrencyAmt.textContent = "Original Currency Amount: " + currencyAmount.value
-      convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result
-      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate
+      currencyCnvtFrom.textContent = "Currency Converted From: " + baseCurrency.value;
+      currencyCnvtTo.textContent = "Currency Converted To: " + conversionCurrency.value;
+      originalCurrencyAmt.textContent = "Original Currency Amount: " + currencyAmount.value;
+      convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result;
+      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate;
 
       exchangeCtn.appendChild(currencyCnvtFrom);
       exchangeCtn.appendChild(currencyCnvtTo);
@@ -84,6 +84,7 @@ function fetchNews() {
     halimasNewsApiKey +
     "&search=" +
     conversionCurrency.value +
+    " + currency" +
     "&language=en&categories=travel&limit=3";
 
   console.log(requestUrl);
@@ -97,17 +98,16 @@ function fetchNews() {
     .then(function (appendNews) {
       console.log(appendNews);
       for (i = 0; i < appendNews.data.length; i++) {
-        var title = document.createElement("p");
-        var image = document.createElement("img");
         var website = document.createElement("a");
-
-        title.textContent = appendNews.data[i].title;
-        image.src = appendNews.data[i].image_url;
+        var image = document.createElement("img");
+        
         website.href = appendNews.data[i].url;
+        website.textContent = appendNews.data[i].title;
+        image.src = appendNews.data[i].image_url;
+        
 
-        newsCtn.appendChild(title);
-        newsCtn.appendChild(image);
         newsCtn.appendChild(website);
+        newsCtn.appendChild(image);
       }
     });
 }
