@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <title>VaCASHin</title>
   </head>
   <script>
@@ -22,54 +25,76 @@
   </script>
   <body>
     <header class="top-header">
-      <nav>
-        <ul>
-          <li>
-            <a href=""> Currency Converter </a>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <ul class="navbar-menu">
+          <li class="navbar-end">
+            <a class="navbar-item" href="#formsContainer">
+              Currency Converter
+            </a>
           </li>
-          <li>
-            <a href=""> Currency News </a>
+          <li class="navbar-end">
+            <a class="navbar-item" href="#exchangeContainer">
+              Previous Searches
+            </a>
           </li>
         </ul>
       </nav>
     </header>
     <figure class="banner"></figure>
-    <main class="content">
-      <section class="section1">
-        <form class="fromCurrencyForm">
-          <b>Currency to Convert From</b>
-          <select id="startingList" onchange="startingCurrency()">
-            <!-- <option>From</option> -->
-            <option>USD</option>
-            <option>AUD</option>
-            <option>GBP</option>
-            <option>TRY</option>
-          </select>
-          <p>
-            Currency Amount to Convert
-            <input type="text" id="currency1" size="20" />
-          </p>
-        </form>
-        <form class="toCurrencyForm">
-          <b> Curency to Convert To</b>
-          <select id="endingList" onchange="endingCurrency()">
-            <!-- <option>To</option> -->
-            <option>USD</option>
-            <option>AUD</option>
-            <option>GBP</option>
-            <option>TRY</option>
-          </select>
-          <!-- <p>
+    <main class="content columns section">
+      <div class="section1 column" id="formsContainer">
+        <p class="bd-notification is-info">Currency Converter</p>
+        <div class="columns is-mobile">
+          <form class="fromCurrencyForm column is-4">
+            <b>From</b>
+            <select id="startingList" onchange="startingCurrency()">
+              <!-- <option>From</option> -->
+              <option>USD</option>
+              <option>AUD</option>
+              <option>GBP</option>
+              <option>TRY</option>
+            </select>
+            <p>
+              Currency Amount to Convert
+              <input type="text" id="currency1" size="20" />
+            </p>
+          </form>
+          <div class="buttons column">
+            <button id="initiateBtn">Initiate Conversion</button>
+            <!-- <button id="clearBtn">Clear Form</button> -->
+          </div>
+          <form class="toCurrencyForm column is-4">
+            <b>To</b>
+            <select id="endingList" onchange="endingCurrency()">
+              <!-- <option>To</option> -->
+              <option>USD</option>
+              <option>AUD</option>
+              <option>GBP</option>
+              <option>TRY</option>
+            </select>
+            <!-- <p>
             Ending Currency
             <input type="text" id="currency2" size="20" />
           </p> -->
-        </form>
-        <button id="initiateBtn">Initiate Conversion</button>
-        <button id="clearBtn">Clear Form</button>
-        <div id="exchangeContainer"></div>
-        <div id="newsContainer"></div>
-      </section>
+          </form>
+        </div>
+      </div>
+      <div class="section2 column">
+        <p class="bd-notification is-danger">News</p>
+        <div class="columns is-mobile">
+          <div id="exchangeContainer" class="column is-3"></div>
+          <div id="newsContainer"></div>
+        </div>
+      </div>
     </main>
+    <!-- <section class="hero"> -->
+    <!-- <div class="section3">
+        <div class="buttons">
+          <button id="initiateBtn">Initiate Conversion</button>
+          <button id="clearBtn">Clear Form</button> -->
+    <!-- </div>
+      </div> -->
+    <!-- </section> -->
   </body>
   <script src="./develop/script.js"></script>
 </html>
