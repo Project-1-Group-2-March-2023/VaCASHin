@@ -51,12 +51,14 @@ function convertCurrency() {
 
     .then(function (appendExchange) {
       console.log(appendExchange);
-      var convertedCurrencyAmt = document.createElement("b");
-      var exchangeRt = document.createElement("b");
+      var convertedCurrencyAmt = document.createElement("p");
+      var exchangeRt = document.createElement("p");
 
       convertedCurrencyAmt.textContent = "New Currency Amount: " + appendExchange.conversion_result;
+      convertedCurrencyAmt.style.fontWeight = "bolder";
 
       exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate;
+      exchangeRt.style.fontWeight = "bolder";
 
       exchangeCtn.appendChild(convertedCurrencyAmt);
       exchangeCtn.appendChild(exchangeRt);
@@ -72,11 +74,11 @@ function fetchNews() {
 
   // Creating and fetching a url comprised with form elements
   var requestUrl =
-    "https://api.thenewsapi.com/v1/news/top?api_token=" +
-    halimasNewsApiKey +
+    "https://api.thenewsapi.com/v1/news/all?api_token=" +
+    kanesNewsApiKey +
     "&search=" +
     conversionCurrency.value +
-    " + currency" +
+    " + currency -Japan -China" +
     "&language=en&categories=travel&limit=3";
 
   console.log(requestUrl);
@@ -95,6 +97,8 @@ function fetchNews() {
 
         website.href = appendNews.data[i].url;
         website.textContent = appendNews.data[i].title;
+        website.style.fontWeight = "bolder";
+        
         image.src = appendNews.data[i].image_url;
 
 
