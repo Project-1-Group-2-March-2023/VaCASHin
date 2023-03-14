@@ -8,13 +8,13 @@
     background-color: lightblue;
 }
 
-#ul-list{
+#ul-list {
     background-color: rgb(252, 159, 59);
 }
 
 .responsive {
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .arrows-icon {

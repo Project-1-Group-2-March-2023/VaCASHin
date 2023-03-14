@@ -55,8 +55,8 @@ function convertCurrency() {
       var exchangeRt = document.createElement("b");
 
       convertedCurrencyAmt.textContent = "New Currency Amount: " + appendExchange.conversion_result;
-      
-      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate ;
+
+      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate;
 
       exchangeCtn.appendChild(convertedCurrencyAmt);
       exchangeCtn.appendChild(exchangeRt);
@@ -92,11 +92,11 @@ function fetchNews() {
       for (i = 0; i < appendNews.data.length; i++) {
         var website = document.createElement("a");
         var image = document.createElement("img");
-        
+
         website.href = appendNews.data[i].url;
         website.textContent = appendNews.data[i].title;
         image.src = appendNews.data[i].image_url;
-        
+
 
         newsCtn.appendChild(website);
         newsCtn.appendChild(image);
