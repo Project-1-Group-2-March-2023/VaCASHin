@@ -43,7 +43,7 @@ function convertCurrency() {
 
   console.log(requestUrl)
 
-  // Returns data based on the requestUrl
+  // Returns exchange rate data based on the requestUrl
   fetch(requestUrl)
     .then((response) => {
       return response.json();
@@ -83,7 +83,7 @@ function fetchNews() {
 
   console.log(requestUrl);
 
-  // Returns data based on the requestUrl
+  // Returns news data based on the requestUrl
   fetch(requestUrl)
     .then((response) => {
       return response.json();
