@@ -57,7 +57,7 @@
             </select>
             <p>
               Currency Amount to Convert
-              <input type="text" id="currency1" size="20" />
+              <input type="number" step="0.25" min="0.00" id="currency1" size="20" />
               <div id="exchangeContainer" class="column"></div>
             </p>
           </form>
@@ -72,7 +72,6 @@
           </form>
           <div class="buttons column">
             <button id="initiateBtn" class="initiate-button">Initiate Conversion</button>
-            <!-- <button id="clearBtn">Clear Form</button> -->
           </div>
           <div id="exchangeContainer" class="hero"></div>
         </div>
