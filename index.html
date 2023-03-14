@@ -25,9 +25,14 @@
     }
   </script>
   <body>
-    <header class="top-header">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <ul class="navbar-menu" id="ul-list">
+    <header class="top-header" id="">
+      <nav
+        class="navbar"
+        id="ul-list"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <ul class="navbar-brand">
           <li class="navbar-end">
             <a class="navbar-item" href="#formsContainer">
               Currency Converter
@@ -60,10 +65,6 @@
               <input type="text" id="currency1" size="20" />
             </p>
           </form>
-          <div class="buttons column">
-            <button id="initiateBtn">Initiate Conversion</button>
-            <!-- <button id="clearBtn">Clear Form</button> -->
-          </div>
           <form class="toCurrencyForm column is-4">
             <b>To</b>
             <select id="endingList" onchange="endingCurrency()">
@@ -78,6 +79,10 @@
             <input type="text" id="currency2" size="20" />
           </p> -->
           </form>
+          <div class="buttons column">
+            <button id="initiateBtn">Initiate Conversion</button>
+            <!-- <button id="clearBtn">Clear Form</button> -->
+          </div>
         </div>
       </div>
       <div class="section2 column">
