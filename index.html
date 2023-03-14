@@ -14,14 +14,10 @@
   <script>
     function startingCurrency() {
       var startingList = document.getElementById("startingList");
-      // document.getElementById("currency1").value =
-      // startingList.options[startingList.selectedIndex].text;
     }
 
     function endingCurrency() {
       var endingList = document.getElementById("endingList");
-      // document.getElementById("currency2").value =
-      //   endingList.options[endingList.selectedIndex].text;
     }
   </script>
   <body>
@@ -54,7 +50,6 @@
           <form class="fromCurrencyForm column is-4">
             <b>From</b>
             <select id="startingList" onchange="startingCurrency()">
-              <!-- <option>From</option> -->
               <option>USD</option>
               <option>AUD</option>
               <option>GBP</option>
@@ -63,44 +58,32 @@
             <p>
               Currency Amount to Convert
               <input type="text" id="currency1" size="20" />
+              <div id="exchangeContainer" class="column"></div>
             </p>
           </form>
           <form class="toCurrencyForm column is-4">
             <b>To</b>
             <select id="endingList" onchange="endingCurrency()">
-              <!-- <option>To</option> -->
               <option>USD</option>
               <option>AUD</option>
               <option>GBP</option>
               <option>TRY</option>
             </select>
-            <!-- <p>
-            Ending Currency
-            <input type="text" id="currency2" size="20" />
-          </p> -->
           </form>
           <div class="buttons column">
             <button id="initiateBtn">Initiate Conversion</button>
             <!-- <button id="clearBtn">Clear Form</button> -->
           </div>
+          <div id="exchangeContainer" class="hero"></div>
         </div>
       </div>
       <div class="section2 column">
         <p class="bd-notification is-danger">News</p>
         <div class="columns is-mobile">
-          <div id="exchangeContainer" class="column is-3"></div>
           <div id="newsContainer"></div>
         </div>
       </div>
     </main>
-    <!-- <section class="hero"> -->
-    <!-- <div class="section3">
-        <div class="buttons">
-          <button id="initiateBtn">Initiate Conversion</button>
-          <button id="clearBtn">Clear Form</button> -->
-    <!-- </div>
-      </div> -->
-    <!-- </section> -->
   </body>
   <script src="./develop/script.js"></script>
 </html>
