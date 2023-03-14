@@ -12,3 +12,20 @@
     background-color: rgb(252, 159, 59);
 }
 
+.responsive {
+width: 100%;
+height: auto;
+}
+
+.arrows-icon {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 31px;
+}
+
+.initiate-button {
+    background-color: lightblue;
+    border-radius: 5px;
+    border-color: darkblue;
+    font-weight: bolder;
+}
