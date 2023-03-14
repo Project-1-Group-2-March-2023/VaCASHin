@@ -14,6 +14,9 @@ Alternatively, you can download the github repository and view the code to see h
 ​
 Both methods will allow you to effectively "use" our code to the greatest degree possible.
 
+# Link to Deployed Application
+https://the-ghrk-group.github.io/VaCASHin/
+
 
 # Screenshot of Deployed Application
 ![A screenshot of the Deployed Application](./assets/vacashin.png)
