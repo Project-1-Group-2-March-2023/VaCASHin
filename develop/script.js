@@ -51,11 +51,12 @@ function convertCurrency() {
 
     .then(function (appendExchange) {
       console.log(appendExchange);
-      var convertedCurrencyAmt = document.createElement("p");
-      var exchangeRt = document.createElement("p");
+      var convertedCurrencyAmt = document.createElement("b");
+      var exchangeRt = document.createElement("b");
 
-      convertedCurrencyAmt.textContent = "Converted Currency Amount: " + appendExchange.conversion_result;
-      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate;
+      convertedCurrencyAmt.textContent = "New Currency Amount: " + appendExchange.conversion_result;
+      
+      exchangeRt.textContent = "Exchange Rate: " + appendExchange.conversion_rate ;
 
       exchangeCtn.appendChild(convertedCurrencyAmt);
       exchangeCtn.appendChild(exchangeRt);
